@@ -6,14 +6,16 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <!-- Browser reset -->
         <link rel="stylesheet" href="reset.css">
+        <!-- jquery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
         <!-- Optional theme -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-        <!-- jquery -->
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        
         <!-- custom styling -->
         <link rel="stylesheet" href="style.css">
 </head>
@@ -127,7 +129,7 @@
                         <div class="modal-content">
                                 <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal">
-                                        &times;
+                                                <span aria-hidden="true">&times;</span>
                                         </button>
                                         <h2 class="modal-title"><strong>Best Match</strong></h2>
                                 </div>
@@ -179,9 +181,10 @@
                         };
                         var currentURL = window.location.origin;
                         $.post(currentURL + "/api/friends", userData, function(data) {
+                                console.log("posted")
                         $("#matchName").text(data.name);
                         $("#matchImg").attr("src", data.photo);
-                        $("#resultsModal").modal("toggle");
+                        $("#resultsModal").modal("show");
                         });
                         } else {
                         alert("Please fill out all fields before submitting!");
