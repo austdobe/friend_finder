@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Browser reset -->
+    <link rel="stylesheet" href="reset.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <!-- custom styling -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <div class="container">
+                <form>
+                        <fieldset>
+                                <h1>Compatibility Survey</h1>
+                                <h4>You have a strong religious beleif</h4>
+                                <select name="religious">
+                                <option value></option>
+                                <option value="1">1 disagree</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 Agree</option>
+                                </select>
+                                <h4>You enjoy taking risks</h4>
+                                <select name="">
+                                <option value></option>
+                                <option value="1">1 disagree</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 Agree</option>
+                                </select>
+                                <h4>Money is important to you</h4>
+                                <select name="religious">
+                                <option value></option>
+                                <option value="1">1 disagree</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 Agree</option>
+                                </select>
+                                <h4>You love animals</h4>
+                                <select name="religious">
+                                <option value></option>
+                                <option value="1">1 disagree</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 Agree</option>
+                                </select>
+                                <h4></h4>
+                                <select name="religious">
+                                <option value></option>
+                                <option value="1">1 disagree</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 Agree</option>
+                                </select>
+                                <select name="religious">
+                                <option value></option>
+                                <option value="1">1 disagree</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 Agree</option>
+                                </select>
+                                <select name="religious">
+                                <option value></option>
+                                <option value="1">1 disagree</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 Agree</option>
+                                </select>
+                                <select name="religious">
+                                <option value></option>
+                                <option value="1">1 disagree</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 Agree</option>
+                                </select>
+                                <select name="religious">
+                                <option value></option>
+                                <option value="1">1 disagree</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 Agree</option>
+                                </select>
+                                <select name="religious">
+                                <option value></option>
+                                <option value="1">1 disagree</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 Agree</option>
+                                </select>
+                        </fieldset>
+                </form> 
+        </div>
+        <script type="text/javascript">
+                $("#submit").on("click", function(){
+                        function validateForm(){
+                        var isValid = true;
+                        $(".formControl").each(function(){
+                                if($(this).val()=== "")isValid = false;
+                        })
+                        $(".chosenSelect").each(function(){
+                                if($(this).val()==="")isValid = false;
+                        })
+                        return isValid
+                        }
+                        if(validateForm()===true){
+                                var userData = {
+                                name: $("#name").val(),
+                                photo: $("#photo").val(),
+                                score: [
+                                        $("#q1".val()),
+                                        $("#q2".val()),
+                                        $("#q3".val()),
+                                        $("#q4".val()),
+                                        $("#q5".val()),
+                                        $("#q6".val()),
+                                        $("#q7".val()),
+                                        $("#q8".val()),
+                                        $("#q9".val()),
+                                        $("#q10".val()),
+                                ],
+                        };
+                        var currentUrl = window.location.origin;
+                        $.post(currentUrl + "/api/friends", userData, function(data){
+                                $("#matchName").text(data.name)
+                                $("matchImg").attr("src", data.photo);
+                                $("resultModal").modal("toggle");
+                        })
+                }else{
+                        alert("Please fill in all of the form prior to submitting.")
+                }
+                })
+        </script>
+</body>
+</html>

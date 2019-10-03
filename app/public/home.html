@@ -1,33 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+    hr{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border: 0;
+        border-top: 1px solid black;
+    }
+            
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Browser reset -->
+    <link rel="stylesheet" href="reset.css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <!-- custom styling -->
+    <link rel="stylesheet" href="style.css">
     <title>Home page</title>
 </head>
 <body>
     <div class="container">
         <div class="jumbotron">
-            <div class="page-header">
-                <h1>Friend Finder</h1>
-            </div>
-            <div>
-                <h2>Answer a few basic questions</h2>
-                <h2>The find friends with the best compatible answers</h2>
-            </div>
-            <button type="button" class="btn-primary">Go to Survey!</button>
+            <i src=""></i>
+            <h1>Friend Finder</h1>
+            <hr>
+            <h2>Answer a few basic questions</h2>
+            <h2>Then find a friend with the greatest compatiblity</h2>
+            <a href="survey.html">
+                <button type="button" class="btn btn-primary">Go to Survey!</button>
+            </a>
         </div>
-
-
-
+        <a href="/api/friends">API Friends List</a>
+        | 
+        <a href="https://github.com/austdobe/friend_finder">GitHub Repo</a>
     </div>
-    
+    <script>
+        $(button).on("click", function(){
+            document.get("survey.html")
+        })
+    </script>
 </body>
 </html>
