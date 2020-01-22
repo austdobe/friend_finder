@@ -1,4 +1,29 @@
 # friend_finder
 
-This is an application designed to help find new friends. You will take a survey and it will calculate your results and will find people with similar interests. 
+#### 'Friend Finder' will match your interests to people with similar interests. 
 
+## How it works:
+#### 1. Answer the survey honestly and with your interests in mind.
+
+#### 2. Once completed the survey will run an algorythm to calculate your results compared with other users.
+
+#### 3. A list of a potential match or friends will be displayed.
+
+## Technologies used
+This project was created with:
+
+* NodeJS 
+* ExpressJS
+* JavaScript
+* jQuery
+* Bootstrap CSS
+* HTML
+* CSS
+
+
+
+## Deployed Site: 
+#### https://friend-finder-ad-2019.herokuapp.com/survey.html
+
+## Contributors
+* Austin Dober | https://github.com/austdobe
