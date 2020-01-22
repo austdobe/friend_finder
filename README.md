@@ -1,6 +1,6 @@
 # friend_finder
 
-#### 'Friend Finder' will match your interests to people with similar interests. 
+#### 'Friend Finder' will match you to friends with common interests or beliefs. 
 
 ## How it works:
 #### 1. Answer the survey honestly and with your interests in mind.
